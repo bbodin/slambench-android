@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="resetButton" type="id">36cdb3ff641327ea620eb4e6310dd4b9</item>
+    <item name="stopButton" type="id">80c40f7962a0873891fb0cf1c7637dbc</item>
+</resources>

@@ -1,0 +1,168 @@
+apply plugin: 'com.android.application'
+
+android {
+
+     lintOptions {
+       // set to true to turn off analysis progress reporting by lint
+         quiet false
+       // if true, stop the gradle build if errors are found
+        abortOnError true
+       // if true, only report errors
+        ignoreWarnings true
+     }
+
+
+
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    sourceSets.main {
+        jni.srcDirs = [] //disable automatic ndk-build call
+        jniLibs.srcDir 'build/libs'
+    }
+
+
+
+    sourceSets.main.jni.srcDirs = [] // avoid auto build ndk
+
+    defaultConfig {
+        multiDexEnabled false
+        applicationId "project.pamela.slambench"
+        minSdkVersion    15
+        targetSdkVersion 22
+        versionCode      10
+        versionName      "1.0-9"
+    }
+    signingConfigs {
+        release {
+        }
+    }
+    buildTypes {
+         release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            proguardFiles 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), 'proguard-rules.pro'
+        }
+    }
+
+
+
+    adbOptions {
+        timeOutInMs 10000 // 10 seconds in ms.
+        installOptions "-d","-t"
+    }
+
+    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
+}
+
+String project_path = new File ( System.getProperty("user.dir") ).absolutePath
+
+String OpenCL_path  = new File ( project_path + "/dependencies/libopencl-stub/" ).absolutePath
+String OpenNI2_path = new File ( project_path + "/dependencies/OpenNI2" ).absolutePath
+
+
+FileCollection ndk_projects = files(  project_path + "/dependencies/OpenNI/Platform/Android/" ,
+                                      project_path + "/dependencies/SensorKinect/Platform/Android/" ,
+                                     "./jni_commands",
+                                     "./jni_kfusion_cpp",
+                                     "./jni_kfusion_neon",
+                                     "./jni_kfusion_omp",
+                                     "./jni_recorder",
+                                     //  "./jni_kfusion_mare",
+                                     "./jni_kfusion_ocl" )
+
+def rootDir = project.rootDir
+def localProperties = new File(rootDir, "local.properties")
+
+Properties properties = new Properties()
+localProperties.withInputStream { instr ->
+    properties.load(instr)
+}
+
+def ndkDir = properties.getProperty('ndk.dir')
+
+
+//noinspection GroovyAssignabilityCheck
+task("build $OpenCL_path" (type: Exec) {
+    workingDir OpenCL_path
+    commandLine "${ndkDir}/ndk-build",
+            "NDK_PROJECT_PATH=.",
+            "APP_BUILD_SCRIPT=Android.mk",
+            "NDK_APPLICATION_MK=Application.mk",
+            "NDK_LIBS_OUT=${buildDir}/tmplibs"
+})
+
+
+
+//noinspection GroovyAssignabilityCheck
+task "copy $OpenCL_path" (dependsOn: "build $OpenCL_path", type:Copy) {
+    from "$buildDir/tmplibs"
+    into "$buildDir/libs"
+}
+
+ndk_projects.each { File file ->
+
+//noinspection GroovyAssignabilityCheck
+ task "copy $file" (dependsOn: "build $file", type:Copy) {
+     from "$buildDir/tmplibs"
+     into "$buildDir/libs"
+ }
+
+
+//noinspection GroovyAssignabilityCheck
+ task "build $file" (dependsOn: ["copy $OpenNI2_path",  "copy $OpenCL_path"], type:Exec) {
+     workingDir file
+     commandLine "${ndkDir}/ndk-build",
+             "NDK_PROJECT_PATH=${buildDir}/intermediates/ndk"  ,
+             "NDK_APPLICATION_MK=${file.absolutePath}/jni/Application.mk" ,
+             "APP_BUILD_SCRIPT=${file.absolutePath}/jni/Android.mk",
+             "NDK_LIBS_OUT=${buildDir}/tmplibs"
+             environment NDK_MODULE_PATH: ndk_projects[0].absolutePath + "/jni" + ":" + OpenCL_path + "/obj/local/"
+ }
+
+}
+
+def len = ndk_projects.getFiles().size() - 1
+len.times {
+     tasks.getByName("build " + ndk_projects[it+1]).dependsOn(tasks.getByName("copy " + ndk_projects[it]))
+ }
+
+//noinspection GroovyAssignabilityCheck
+task "build $OpenNI2_path" (type:Exec) {
+    workingDir OpenNI2_path + "/Packaging/"
+
+    onlyIf {
+     ! file(OpenNI2_path + "/Packaging/Final/OpenNI-android-2.2.tar").exists()
+    }
+    commandLine "./ReleaseVersion.py", "android"
+    environment NDK_ROOT: "${ndkDir}"
+}
+
+
+//noinspection GroovyAssignabilityCheck
+task "copy $OpenNI2_path" (dependsOn: "build $OpenNI2_path", type:Copy) {
+    from "$OpenNI2_path/Packaging/OpenNI-android-2.2"
+    into "$buildDir/libs/"
+}
+
+
+tasks.withType(JavaCompile) { compileTask -> compileTask.dependsOn "copy " + ndk_projects[ndk_projects.getFiles().size()-1] }
+
+
+
+
+
+
+dependencies {
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(dir: new File(buildDir, 'libs'), include: '*.jar')
+    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile "com.androidplot:androidplot-core:0.6.1"
+    compile 'fr.avianey.com.viewpagerindicator:library:2.4.1@aar'
+
+}

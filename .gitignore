@@ -1,0 +1,14 @@
+
+/app/include/TooN/
+/app/include/CL/
+/app/lib/
+/dependencies/
+	
+/.gradle/
+/.idea/libraries/
+/.idea/workspace.xml
+/build/
+/local.properties
+/.idea/
+/projectFilesBackup/
+/slambench-android.iml

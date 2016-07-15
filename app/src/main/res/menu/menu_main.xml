@@ -1,0 +1,37 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+
+    <item android:id="@+id/run_live"
+        android:title="@string/run_live"
+        android:icon="@drawable/ic_action_about"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/run_record"
+        android:title="@string/run_record"
+        android:icon="@drawable/ic_action_about"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_about"
+        android:title="@string/action_about"
+        android:icon="@drawable/ic_action_about"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_releasenotes"
+        android:title="@string/action_releasenotes"
+        android:icon="@drawable/ic_action_copy"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <group android:checkableBehavior="all">
+        <item android:id="@+id/action_debug"
+            android:title="@string/action_debug"
+            android:icon="@drawable/ic_action_settings"
+            android:orderInCategory="100"
+            app:showAsAction="never" />
+    </group>
+
+</menu>

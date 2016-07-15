@@ -1,0 +1,59 @@
+<SLAMBench>
+<Arguments><name>EXPRESS</name>  <value>-s 5.0 -p 0.34,0.5,0.24 -k 481.2,480,320,240 -z 1 -c 4 -l 32.8116 -r 24 -m 0.419017  -y 4,2,0   -v 128 </value> </Arguments>
+<Arguments><name>FAST1</name>    <value>-s 5.0 -p 0.34,0.5,0.24 -k 481.2,480,320,240 -z 1 -c 4 -l 32.8116 -r 24 -m 0.419017  -y 4,2,0   -v 128</value> </Arguments>
+<Arguments><name>FAST2</name>    <value>-s 5.0 -p 0.34,0.5,0.24 -k 481.2,480,320,240 -z 1 -c 4 -l 55.7286 -r 21 -m 0.407327  -y 9,6,3   -v 256</value> </Arguments>
+<Arguments><name>FAST3</name>    <value>-s 5.0 -p 0.34,0.5,0.24 -k 481.2,480,320,240 -z 1 -c 2 -l 24.9643 -r 22 -m 0.430125  -y 6,4,5   -v 128</value> </Arguments>
+<Arguments><name>FAST4</name>    <value>-s 5.0 -p 0.34,0.5,0.24 -k 481.2,480,320,240 -z 1 -c 4 -l 32.3618 -r 9  -m 0.147881  -y 11,11,6 -v 512</value> </Arguments>
+<Arguments><name>STANDARD</name> <value>-s 5.0 -p 0.34,0.5,0.24 -k 481.2,480,320,240 -z 1 -c 2 -r 2  </value> </Arguments>
+
+<Dataset>
+<name>SHORT</name> <filename>short.raw</filename> 
+<filesize>31457280</filesize> <trajsize>0</trajsize> 
+<MD5>C2C6A376CB9FCF17AFCEB3A5A9C5604F</MD5> <TRAJ_MD5>4CE35AE0BBCA5D10EA7D36683D0869AD</TRAJ_MD5>
+<size>20</size>
+</Dataset>
+<Dataset>
+<name>MEDIUM</name>
+<filename>medium.raw</filename>
+<filesize>153601600</filesize> <trajsize>0</trajsize>
+ <MD5>65AD5F7786A67E0159DEB7439149718D</MD5> <TRAJ_MD5>4CE35AE0BBCA5D10EA7D36683D0869AD</TRAJ_MD5> <size>100</size>
+</Dataset>
+
+<SLAMTest> <name>express-demo-omp</name>  <implementation>KFUSION_OMP</implementation>  <arguments>EXPRESS</arguments> <dataset>SHORT</dataset> </SLAMTest>
+<SLAMTest> <name>express-demo-cpp</name>  <implementation>KFUSION_CPP</implementation>  <arguments>EXPRESS</arguments> <dataset>SHORT</dataset> </SLAMTest>
+
+
+    <SLAMRank> <test>express-kfusion-neon</test> <device>Explay sQuad 10.02 3G</device> <result>4.0827013209621</result></SLAMRank>
+    <SLAMRank> <test>express-kfusion-neon</test> <device>Huawei Y330-U01</device> <result>4.95409338902</result></SLAMRank>
+    <SLAMRank> <test>express-kfusion-omp</test> <device>Motorola Nexus 6</device> <result>8.96913956757</result></SLAMRank>
+    <SLAMRank> <test>express-kfusion-omp</test> <device>Samsung Galaxy S3 (GT-I9300)</device> <result>11.225751730781</result></SLAMRank>
+    <SLAMRank> <test>express-kfusion-omp</test> <device>KINGZONE N3 LTE</device> <result>13.360603572214</result></SLAMRank>
+    <SLAMRank> <test>express-kfusion-omp</test> <device>LGE Nexus 5</device> <result>14.12882498729</result></SLAMRank>
+    <SLAMRank> <test>express-kfusion-omp</test> <device>Lenovo B8080-F</device> <result>14.481258442212</result></SLAMRank>
+    <SLAMRank> <test>express-kfusion-omp</test> <device>HTC Nexus 9</device> <result>19.004580008759</result></SLAMRank>
+    <SLAMRank> <test>express-kfusion-omp</test> <device>Google Project Tango Tablet Development Kit</device> <result>26.635525120976</result></SLAMRank>
+    <SLAMRank> <test>express-kfusion-cpp</test> <device>Alcatel One Touch 4030D</device> <result>4.2011869445427</result></SLAMRank>
+    <SLAMRank> <test>express-kfusion-cpp</test> <device>Motorola DROID RAZR M (XT907)</device> <result>4.2356611750614</result></SLAMRank>
+    <SLAMRank> <test>express-kfusion-cpp</test> <device>LGE Nexus 4</device> <result>4.9438995937499</result></SLAMRank>
+    <SLAMRank> <test>express-kfusion-cpp</test> <device>HTC One X</device> <result>7.0706751455375</result></SLAMRank>
+    <SLAMRank> <test>express-kfusion-cpp</test> <device>Samsung Galaxy S4 Mini (GT-I9195)</device> <result>7.1112476470659</result></SLAMRank>
+    <SLAMRank> <test>express-kfusion-cpp</test> <device>Samsung Galaxy Note2 (GT-N7105)</device> <result>7.8682551939533</result></SLAMRank>
+    <SLAMRank> <test>express-kfusion-cpp</test> <device>Samsung Galaxy Note2 (GT-N7100)</device> <result>7.9773290689723</result></SLAMRank>
+    <SLAMRank> <test>express-kfusion-cpp</test> <device>Google Android SDK built for x86</device> <result>19.607887735588</result></SLAMRank>
+    <SLAMRank> <test>fast1-kfusion-ocl</test> <device>Sony Xperia Z3 (D6603)</device> <result>14.635543928819</result></SLAMRank>
+    <SLAMRank> <test>fast1-kfusion-ocl</test> <device>Samsung Galaxy S4 (GT-I9505)</device> <result>15.039402331745</result></SLAMRank>
+    <SLAMRank> <test>fast1-kfusion-ocl</test> <device>LGE Nexus 5 (AOSP on HammerHead)</device> <result>16.238808700208</result></SLAMRank>
+    <SLAMRank> <test>fast1-kfusion-ocl</test> <device>Samsung Galaxy Note3 (SM-N9005)</device> <result>18.616912001264</result></SLAMRank>
+    <SLAMRank> <test>fast1-kfusion-ocl</test> <device>Asus Nexus 7 (2013)</device> <result>20.701897846485</result></SLAMRank>
+    <SLAMRank> <test>fast1-kfusion-ocl</test> <device>HTC One (M8) (HTC One_M8)</device> <result>20.810734609775</result></SLAMRank>
+    <SLAMRank> <test>fast1-kfusion-ocl</test> <device>OnePlus One (A0001)</device> <result>21.478863112606</result></SLAMRank>
+    <SLAMRank> <test>fast1-kfusion-ocl</test> <device>Samsung Galaxy S5 (SM-G900F)</device> <result>40.038743089363</result></SLAMRank>
+    <SLAMRank> <test>fast1-kfusion-ocl</test> <device>Qualcomm MDP 805 Tablet (apq8084)</device> <result>44.388780913179</result></SLAMRank>
+    <SLAMRank> <test>fast1-kfusion-ocl</test> <device>Samsung Galaxy S6 (SM-G920T)</device> <result>55.205335971118</result></SLAMRank>
+    <SLAMRank> <test>fast1-kfusion-ocl</test> <device>Samsung Galaxy S6 (SM-G920F)</device> <result>60.498479642957</result></SLAMRank>
+    <SLAMRank> <test>express-kfusion-ocl</test> <device>HTC One (m7)</device> <result>18.914597546826</result></SLAMRank>
+
+
+
+
+</SLAMBench>

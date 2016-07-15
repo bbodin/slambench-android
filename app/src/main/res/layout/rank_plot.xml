@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1.0"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/opencl_legend"
+            android:id="@+id/oclLegend"
+            android:layout_weight=".20"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:background="@color/oclLegendColor" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".07"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/cppomp_legend"
+            android:id="@+id/cppLegend"
+            android:layout_weight=".20"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:background="@color/cppLegendColor" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".07"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/others_legend"
+            android:id="@+id/otherLegend"
+            android:layout_weight=".20"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:background="@color/othersLegendColor" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".07"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/yours_legend"
+            android:id="@+id/yoursLegend"
+            android:layout_weight=".20"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:background="@color/yoursLegendColor" />
+
+    </LinearLayout>
+
+    <com.androidplot.xy.XYPlot
+        android:id="@+id/mySimpleXYPlot"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+    />
+</LinearLayout>

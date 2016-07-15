@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:id="@+id/main_activity_linear_layout" >
+
+      <ScrollView
+          android:fadeScrollbars="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_panel">
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:gravity="bottom">
+
+                  <ImageView
+                      android:layout_width="match_parent"
+                      android:id="@+id/imageView"
+                      android:src="@drawable/feature_graphic"
+                      android:contentDescription="@string/logo_description"
+                      android:layout_marginTop="0dp"
+                      android:layout_marginLeft="0dp"
+                      android:layout_margin="0dp"
+                      android:layout_marginRight="0dp"
+                      android:layout_marginBottom="0dp"
+                      android:padding="0dp"
+                      android:paddingLeft="0dp"
+                      android:paddingTop="0dp"
+                      android:paddingRight="0dp"
+                      android:paddingBottom="0dp"
+                      android:paddingEnd="0dp"
+                      android:paddingStart="0dp"
+                      android:scaleType="centerInside"
+                      android:adjustViewBounds="true"
+                      android:cropToPadding="true"
+                      android:layout_height="wrap_content" />
+
+                  <TextView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:text="@string/app_description"
+              android:id="@+id/descriptionView"
+              android:padding="10dp" />
+              </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottom_panel"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:padding="10dp"
+            android:text="@string/button_run_it"
+            android:gravity="center|bottom"
+            android:id="@+id/runButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+</RelativeLayout>

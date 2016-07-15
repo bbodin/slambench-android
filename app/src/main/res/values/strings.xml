@@ -1,0 +1,209 @@
+<resources>
+    <string name="app_name">SLAMBench</string>
+
+    <string name="app_description">
+"SLAMBench is a new generation of benchmark targeting Power, Performance, and Accuracy for SLAM Applications on mobile devices.
+In this version of SLAMBench, the KinectFusion application is going to be tested several times for several parameter configurations, and a final mark for your device will be computed.
+          </string>
+
+    <string name="button_run_it">run it</string>
+    <string name="action_about">About us</string>
+    <string name="current_architecture">Current architecture: </string>
+    <string name="current_opencl_device">Current OpenCL device: </string>
+    <string name="currentJob">Current Job .............. </string>
+    <string name="current_library_failed">Failed to load NDK Libraries</string>
+    <string name="call_test_failed">NDK Function call failed</string>
+    <string name="cpp_worked">KFusion CPP library loaded</string>
+    <string name="ocl_worked">KFusion OpenCL library loaded</string>
+    <string name="cpp_failed">Error with KFusion CPP Library</string>
+    <string name="ocl_failed">OpenCL skipped.</string>
+    <string name="title_activity_benchmark">Benchmarking</string>
+    <string name="title_activity_result">Benchmark results</string>
+    <string name="retry">Retry</string>
+    <string name="share">Share</string>
+    <string name="ocl_kernel_not_found">OpenCL kernel is missing</string>
+    <string name="ocl_kernel_found">OpenCL kernel OK!</string>
+    <string name="run_live">Live mode</string>
+    <string name="error_title">Error</string>
+    <string name="error_benchmark_in_progress">A benchmark is already in progress. This is very bad… kill me !</string>
+    <string name="LiveActivity">Live mode</string>
+    <string name="RecordActivity">Record mode</string>
+    <string name="strTestDescription">C++ version</string>
+    <string name="omp_worked">OMP worked</string>
+    <string name="omp_failed">OMP failed</string>
+    <string name="stopButton">Stop</string>
+    <string name="live_mode_available">This phone is rooted, the live mode might be possible, enjoy it !</string>
+    <string name="neon_worked">NEON worked</string>
+    <string name="neon_failed">NEON Failed</string>
+    <string name="these_tasks_are_ignored">The following tests has been ignored</string>
+    <string name="title_activity_plot">PlotActivity</string>
+    <string name="insufficient_memory" formatted="false">Warning, this app needs at least %dMB of cache memory to work properly (%dMB found only).</string>
+    <string name="current_os_version">OS Version:</string>
+    <string name="current_sdk_version">SDK version:</string>
+    <string name="current_device_name">Device name:</string>
+    <string name="current_model_name">Model name:</string>
+    <string name="current_product_name">Product name:</string>
+    <string name="action_debug">Debug</string>
+    <string name="debug_title">Debug mode is activated</string>
+    <string name="debug_message">You activated the debug mode. This will decrease the speed of this benchmark (but should not impact it\'s result), and will produce a lot of network traffic.</string>
+    <string name="action_releasenotes">Release Notes</string>
+    <string name="releasenotes_title">Release notes</string>
+    <string name="releasenotes_message">
+        10 (1.0-9)\n
+        - Fix a dramatic bug in the sensor gathering which used to break to visualization.\n
+        9 (1.0-8)\n
+        - Move the configuration download into the first activity\n
+        - Remove memory limit\n
+        - Fix an AlertDialog bug\n
+        - Add more device information (cpuinfo + governor + gl)\n
+        - Add design space exploration mode\n
+        8 (1.0-7)\n
+        - Add device ranking in the results\n
+        - Add an offline configuration (if no internet)\n
+        7 (1.0-6)\n
+        - Add frequency plot\n
+        - Workaround for OpenCL crash on Lenovo and OnePlusOne (reload OpenCL.so at every run)\n
+        - Fix main activity layout for xlarge\n
+        - Benchmark suite will depend of the APK version and of the device capabilities\n
+        - Retry results upload if failed\n
+        6 (1.0-5)\n
+        - Fix rotation issue\n
+        - Resolved several UI instabilities\n
+        - Configuration is stored remotely\n
+        5 (1.0-4)\n
+        - Compress dataset (download is x3 faster)\n
+        - Dataset is checked only once (before the actual benchmark)\n
+        4 (1.0-3)\n
+        - Remove USB OTG requirement (add 2887 supported devices)\n
+        - Show final score now\n
+        3 (1.0-2)\n
+        - Fix remained memory threshold to 30MB (stop benchmark is this threshold is reached)\n
+        - Add debug mode (remotely debug the benchmark)\n
+        - Slightly improve JNI\n
+        - Activate minify\n
+        2 (1.0-1)\n
+        - Removed unnecessary permissions.\n
+        - Set a bigger list of run.\n
+        - Change API to +15 (only 32 devices ignored)\n
+        1 (1.0):\n
+        - initial version\n
+        \n
+        Known issues\n
+        - Plot rendering can be ugly.\n
+    </string>
+    <string name="current_board_name">Board name:</string>
+    <string name="current_manufacturer_name">Manufacturer:</string>
+    <string name="current_brand_name">Brand:</string>
+    <string name="current_bootload_name">Bootloader:</string>
+    <string name="current_hardware_name">Hardware:</string>
+    <string name="current_os_name">OS name:</string>
+    <string name="current_os_arch">OS arch:</string>
+    <string name="best_result">Best: %.1f fps</string>
+    <string name="start_configuration_download">Start configuration download…</string>
+    <string name="finish_configuration_download">Configuration downloaded</string>
+    <string name="try_configuration_download_again" formatted="false" >try again in 5 sec (%d try left) …</string>
+    <string name="benchmark_stopped">Benchmark stopped (%s).</string>
+    <string name="debug_activity_constructed">%s content constructed.</string>
+    <string name="debug_onstop_happened">onStop %s happened</string>
+    <string name="debug_onpause_happened">onPause %s happened</string>
+    <string name="debug_onbackpressed_happened">onBackPressed %s happened</string>
+    <string name="debug_oncreate_happened">onCreate %s happened</string>
+    <string name="debug_onresume_happened">onResume %s happened</string>
+    <string name="debug_reset_benchmark">" benchmark already done before : reset variable to run config again."</string>
+    <string name="error_configuration_failed">Something wrong happened, configuration has been launch but no benchmark found.</string>
+    <string name="msg_current_job" formatted="false" >%s (%d left)</string>
+    <string name="benchmark_error">benchmark error</string>
+    <string name="info_total_cpu_overhead">TotalCpuOverHead: %fs</string>
+    <string name="info_end_of_benchmark">End of benchmark.</string>
+    <string name="back_button_pressed">BackButton</string>
+    <string name="debug_go_next_step">Go Next State ....</string>
+    <string name="error_unknown_state">ERROR UNKNOWN SCENARIO STATE</string>
+    <string name="error_start_of_program">"START_OF_PROGRAM finishState Exception = "</string>
+    <string name="error_no_memory_left">no memory left</string>
+    <string name="error_end_of_program">END_OF_PROGRAM finishState</string>
+    <string name="error_network">Distant server unavailable or version too old (try to update or to test your network).</string>
+    <string name="kernel_filename">kernels.cl</string>
+    <string name="msg_yes">Yes</string>
+    <string name="msg_no">No</string>
+    <string name="msg_upload_failed_try_again">Your data uploading failed, do you want to retry?</string>
+    <string name="url_upload">http://homepages.inf.ed.ac.uk/bbodin/load.php?q=%s</string>
+    <string name="sys_textplain">text/plain</string>
+    <string name="txt_share_header">My SLAMBench result is …</string>
+    <string name="debug_share_failed_null_pointer">"The share operation failed because of null pointer "</string>
+    <string name="debug_share_failed">"The share operation failed "</string>
+    <string name="msg_swipe_to_see_more">Swipe to see more graphs.</string>
+    <string name="txt_live_jobname">Live mode</string>
+    <string name="txt_recorder_jobname">Recording mode</string>
+    <string name="debug_ontaskterminate_error">onTaskTerminate get error.</string>
+    <string name="msg_live_init_error">Live stream error or current library doesn\'t support OpenNI.</string>
+    <string name="msg_recording_init_error">Record  stream error or current library doesn\'t support OpenNI.</string>
+    <string name="recording_test_name">recording</string>
+    <string name="openmp_live_test_name">openmp_live</string>
+    <string name="opencl_live_test_name">opencl_live</string>
+    <string name="msg_live_can_be_done">Live can be done.</string>
+    <string name="msg_live_can_not_be_done">Live can\'t be done.</string>
+    <string name="msg_recording_can_be_done">Recording can be done.</string>
+    <string name="msg_recording_can_not_be_done">Recording can\'t be done.</string>
+    <string name="msg_no_right_sensor_file">No Permission to read the sensor configuration file.</string>
+    <string name="msg_right_sensor_file">Permission to read the sensor configuration file.</string>
+    <string name="msg_no_right_module_file">NO Permission to read the OpenNI modules configuration.</string>
+    <string name="msg_right_module_file">Permission to read the OpenNI modules configuration.</string>
+    <string name="msg_no_right_device">NO Permission to read the USB device !!</string>
+    <string name="msg_right_device">Permission to read the USB device.</string>
+    <string name="debug_root_command_failed">Command as root FAILED.</string>
+    <string name="debug_root_command_worked">Command as root worked.</string>
+    <string name="msg_no_sensor_found">No Depth sensor found.</string>
+    <string name="msg_unknow_device">Unknown device found</string>
+    <string name="title_preparing_dataset">Preparing datasets</string>
+    <string name="progressbar_download_file_format"  formatted="false" >%1d MB / %2d MB</string>
+    <string name="debug_end_of_download">End of downloads</string>
+    <string name="log_configuration_error">Configuration error</string>
+    <string name="debug_flaw_in_the_system">Flaw in the system</string>
+    <string name="debug_end_of_initialization">End of initialization task</string>
+    <string name="debug_end_of_configuration">End of configuration</string>
+    <string name="PAMELA_SLAMBENCH_URL">http://apt.cs.manchester.ac.uk/projects/PAMELA/tools/SLAMBench/?from=android</string>
+    <string name="debug_open_about_us">Open About message (web link).</string>
+    <string name="debug_open_release_notes">open release notes</string>
+    <string name="debug_open_error_dialog">Open error dialog with message %s.</string>
+    <string name="msg_error_info">%s\n The application is finished …</string>
+    <string name="debug_open_debug_menu">Open Debug menu.</string>
+    <string name="debug_unknown_option">Unknown action from %s.</string>
+    <string name="msg_uploading_results">Results uploading in progress.</string>
+    <string name="app_warning">Be aware that technical information about you device and about its performance will be anonymously sent to a remote server. These data will be use, in the future, to improve SLAM applications.</string>
+    <string name="debug_end_of_release">end of kfusion released task</string>
+    <string name="msg_uploading_results_title">Upload</string>
+    <string name="legend_degrees">Degrees (°C)</string>
+    <string name="legend_frame_number">Frame number</string>
+    <string name="logo_description">logo</string>
+    <string name="debug_proposed_value_not_valid">Proposed Test result is not valid.</string>
+    <string name="legend_ate">ATE (cm)</string>
+    <string name="legend_duration">Duration (sec)</string>
+    <string name="legend_power">Power (W)</string>
+    <string name="legend_error_limit">Error limit</string>
+    <string name="legend_realtime_limit">real-time limit</string>
+    <string name="legend_power_limit">power constraint</string>
+    <string name="debug_state_timing"   formatted="false" >State:%s CpuTime:%ss realTime:%ss</string>
+    <string name="debug_populate_announcement">Configuration Task is finish. It\'s time to populate the job queue.</string>
+    <string name="debug_configuration_queue">Configuration queue %s</string>
+    <string name="debug_scenario_null">scenario == null</string>
+    <string name="msg_dataset_download_failed">Dataset download failed.</string>
+    <string name="button_text_cancel">Cancel</string>
+    <string name="msg_cancellation">Cancellation ...</string>
+    <string name="frequency_legend">CPU %d</string>
+    <string name="frequency_domain">CPU frequency (Ghz)</string>
+    <string name="debug_local_configuration_file_used">Server not found. The demo configuration has been selected.</string>
+    <string name="legend_fps">Maximum Frame per Second</string>
+    <string name="action_ranking">See existing ranking</string>
+    <string name="opencl_legend">OpenCL</string>
+    <string name="cppomp_legend">C++/OpenMP</string>
+    <string name="others_legend">Other</string>
+    <string name="yours_legend">Yours</string>
+    <string name="title_select_mode">Select your mode...</string>
+    <string name="error_benchmark_not_found">Error benchmark has not been found !</string>
+    <string name="current_cpu_governor">CPU Governor:</string>
+    <string name="msg_select_mode">Select mode %s.</string>
+    <string name="button_start">START</string>
+    <string name="title_information">Information</string>
+    <string name="error_fail_configuration_download">Failed to download configuration... try to update SLAMBench.</string>
+    <string name="run_record">Record Raw file</string>
+</resources>

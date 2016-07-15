@@ -1,0 +1,11 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="title_font_size">20sp</dimen>
+    <dimen name="domain_label_font_size">13sp</dimen>
+    <dimen name="range_label_font_size">13sp</dimen>
+    <dimen name="range_tick_label_font_size">15sp</dimen>
+    <dimen name="domain_tick_label_font_size">15sp</dimen>
+    <dimen name="legend_text_font_size">13sp</dimen>
+
+</resources>

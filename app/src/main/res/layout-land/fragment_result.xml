@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/benchmark_bottom_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <View android:id="@+id/fakeView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerInParent="true"/>
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignRight="@id/fakeView"
+            android:layout_alignEnd="@id/fakeView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignLeft="@id/fakeView"
+            android:layout_alignStart="@id/fakeView"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/message"
+            android:gravity="bottom"
+            android:background="@android:drawable/editbox_background"
+            android:scrollbars="vertical"
+            />
+
+
+    </RelativeLayout>
+
+
+
+
+
+</LinearLayout>
