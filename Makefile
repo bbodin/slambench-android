@@ -32,15 +32,15 @@ ndk :
 	mv android-ndk-r10e ~/.local/Android/android-ndk-r10e
 
 prop :
-	@echo "sdk.dir=$HOME/.local/Android/Sdk" > ./local.properties
-	@echo "ndk.dir=$HOME/.local/Android/Ndk" >> ./local.properties
+	@echo "sdk.dir=$$HOME/.local/Android/Sdk" > ./local.properties
+	@echo "ndk.dir=$$HOME/.local/Android/Ndk" >> ./local.properties
 
 
 local.properties :
 	@echo "********************************************************************"
 	@echo "The $@ is not found. Please produce this file. It should look like :"
-	@echo "  sdk.dir=$HOME/.local/Android/Sdk"
-	@echo "  ndk.dir=$HOME/.local/Android/Ndk"
+	@echo "  sdk.dir=$$HOME/.local/Android/Sdk"
+	@echo "  ndk.dir=$$HOME/.local/Android/Ndk"
 	@echo "********************************************************************"
 	@false
 
