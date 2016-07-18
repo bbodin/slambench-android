@@ -91,7 +91,7 @@ I prepared it on a clean Fedora 24 Workstation, and this is what I did first :
 Then you need to fix the absolute paths in ./local.properties:
 ```
 echo "sdk.dir=/home/`whoami`/.local/Android/Sdk" > ./local.properties
-echo "ndk.dir=/home/`whoami`/.local/Android/Ndk" >> ./local.properties
+echo "ndk.dir=/home/`whoami`/.local/Android/android-ndk-r10e" >> ./local.properties
 ```
 
 ## Compilation

@@ -33,7 +33,7 @@ ndk :
 
 prop :
 	@echo "sdk.dir=$$HOME/.local/Android/Sdk" > ./local.properties
-	@echo "ndk.dir=$$HOME/.local/Android/Ndk" >> ./local.properties
+	@echo "ndk.dir=$$HOME/.local/Android/android-ndk-r10e" >> ./local.properties
 
 
 local.properties :
