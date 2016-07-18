@@ -3,16 +3,9 @@ language: java
 jdk:
   - openjdk7
 
-before_install:true
-
 install:
     - make sdk
     - make ndk
     - make prop
     - make 
 
-before_script:true
-script:true
-after_success:true
-after_failure:true
-after_script:true
