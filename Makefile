@@ -12,7 +12,7 @@ dep : local.properties dependencies/OpenNI dependencies/OpenNI2 dependencies/Sen
 
 studio :
 	wget https://dl.google.com/dl/android/studio/ide-zips/2.1.2.0/android-studio-ide-143.2915827-linux.zip
-	unzip android-studio-ide-143.2915827-linux.zip
+	unzip -qq android-studio-ide-143.2915827-linux.zip
 	mkdir -p ~/.local/Android/
 	mv android-studio ~/.local/Android/android-studio
 	~/.local/Android/android-studio/bin/studio.sh
@@ -27,7 +27,7 @@ sdk :
 
 ndk :
 	wget http://dl.google.com/android/repository/android-ndk-r10e-linux-x86_64.zip
-	unzip android-ndk-r10e-linux-x86_64.zip
+	unzip -qq android-ndk-r10e-linux-x86_64.zip 
 	mkdir ~/.local/Android -p
 	mv android-ndk-r10e ~/.local/Android/android-ndk-r10e
 
