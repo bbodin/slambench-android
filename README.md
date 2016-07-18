@@ -63,7 +63,7 @@ I prepared it on a clean Fedora 24 Workstation, and this is what I did first :
 ```
 * If you are running on a 64bit machine you will need to install 32bits dependencies.
 ```
-  dnf install libstdc++-devel.i686 zlib.686
+  dnf install libstdc++-devel.i686 zlib.i686
 ```
 * Install **android-studio** -- optional -- ([https://developer.android.com/studio/index.html](https://developer.android.com/studio/index.html))
 ```
