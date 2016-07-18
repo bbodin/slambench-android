@@ -1,4 +1,4 @@
-# SLAMBench for Android 
+# SLAMBench for Android  [![Build Status](https://travis-ci.org/bbodin/slambench-android.svg?branch=master)](https://travis-ci.org/bbodin/slambench-android)
 
 This repository contains the Android version of SLAMBench. 
 SLAMBench for Android uses the KinectFusion algorithm to evaluate the CPU (and the GPU) performance of mobile phones.
@@ -80,7 +80,7 @@ I prepared it on a clean Fedora 24 Workstation, and this is what I did first :
   tar xzf android-sdk_r24.4.1-linux.tgz
   mv android-sdk-linux ~/.local/Android/Sdk
   ~/.local/Android/Sdk/tools/android list sdk --all
-  ~/.local/Android/Sdk/tools/android update sdk -u -a -t "platform-tools,tools,android-22,build-tools-22.0.1,extra-google-m2repository,addon-google_apis-google-22"   
+  ~/.local/Android/Sdk/tools/android update sdk -u -a -t "platform-tools,tools,android-22,build-tools-22.0.1,extra-android-m2repository,addon-google_apis-google-22"   
 ```
 * Install **Android NDK r10e** ([https://developer.android.com/ndk/downloads/index.html](https://developer.android.com/ndk/downloads/index.html))
 ```
