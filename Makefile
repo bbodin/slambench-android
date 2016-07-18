@@ -20,7 +20,7 @@ studio :
 sdk :
 	wget https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
 	tar xzf android-sdk_r24.4.1-linux.tgz
-	mdkir ~/.local/Android -p
+	mkdir ~/.local/Android -p
 	mv android-sdk-linux ~/.local/Android/Sdk
 	~/.local/Android/Sdk/tools/android list sdk --all
 	~/.local/Android/Sdk/tools/android update sdk -u -a -t "platform-tools,tools,android-22,build-tools-22.0.1,extra-google-m2repository,addon-google_apis-google-22"
@@ -28,7 +28,7 @@ sdk :
 ndk :
 	wget http://dl.google.com/android/repository/android-ndk-r10e-linux-x86_64.zip
 	unzip android-ndk-r10e-linux-x86_64.zip
-	mdkir ~/.local/Android -p
+	mkdir ~/.local/Android -p
 	mv android-ndk-r10e ~/.local/Android/android-ndk-r10e
 
 prop :
