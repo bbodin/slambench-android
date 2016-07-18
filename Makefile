@@ -10,6 +10,30 @@ apk : local.properties dependencies/OpenNI dependencies/OpenNI2 dependencies/Sen
 
 dep : local.properties dependencies/OpenNI dependencies/OpenNI2 dependencies/SensorKinect dependencies/libopencl-stub dependencies/slambench ${ROOT_DIR}/app/include/TooN ${ROOT_DIR}/app/include/CL
 
+studio :
+	wget https://dl.google.com/dl/android/studio/ide-zips/2.1.2.0/android-studio-ide-143.2915827-linux.zip
+	unzip android-studio-ide-143.2915827-linux.zip
+	mkdir -p ~/.local/Android/
+	mv android-studio ~/.local/Android/android-studio
+	~/.local/Android/android-studio/bin/studio.sh
+
+sdk :
+	wget https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
+	tar xzf android-sdk_r24.4.1-linux.tgz
+	mv android-sdk-linux ~/.local/Android/Sdk
+	~/.local/Android/Sdk/tools/android list sdk --all
+	~/.local/Android/Sdk/tools/android update sdk -u -a -t "platform-tools,tools,android-22,build-tools-22.0.1,extra-google-m2repository,addon-google_apis-google-22"
+
+ndk :
+	wget http://dl.google.com/android/repository/android-ndk-r10e-linux-x86_64.zip
+	unzip android-ndk-r10e-linux-x86_64.zip
+	mv android-ndk-r10e ~/.local/Android/android-ndk-r10e
+
+prop :
+	@echo "sdk.dir=/home/`whoami`/.local/Android/Sdk" > ./local.properties
+	@echo "ndk.dir=/home/`whoami`/.local/Android/Ndk" >> ./local.properties
+
+
 local.properties :
 	@echo "********************************************************************"
 	@echo "The $@ is not found. Please produce this file. It should look like :"
