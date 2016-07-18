@@ -1,7 +1,12 @@
 language: java
 
+
 jdk:
   - openjdk7
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y lib32stdc++6 lib32z1
 
 install:
     - make sdk
