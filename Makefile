@@ -23,7 +23,7 @@ sdk :
 	mkdir ~/.local/Android -p
 	mv android-sdk-linux ~/.local/Android/Sdk
 	~/.local/Android/Sdk/tools/android list sdk --all
-	( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | ~/.local/Android/Sdk/tools/android update sdk   -u -a -t "platform-tools,tools,android-22,build-tools-22.0.1,extra-google-m2repository,addon-google_apis-google-22"
+	( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | ~/.local/Android/Sdk/tools/android update sdk   -u -a -t "platform-tools,tools,android-22,build-tools-22.0.1,extra-android-m2repository,addon-google_apis-google-22"
 
 ndk :
 	wget http://dl.google.com/android/repository/android-ndk-r10e-linux-x86_64.zip
