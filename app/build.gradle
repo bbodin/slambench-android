@@ -14,7 +14,7 @@ android {
 
 
     compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    buildToolsVersion '23.0.2'
 
     sourceSets.main {
         jni.srcDirs = [] //disable automatic ndk-build call
