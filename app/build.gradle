@@ -33,10 +33,13 @@ android {
         versionCode      10
         versionName      "1.0-9"
     }
+
     signingConfigs {
         release {
         }
     }
+
+
     buildTypes {
          release {
             signingConfig signingConfigs.release
@@ -60,7 +63,6 @@ android {
 }
 
 String project_path = new File ( System.getProperty("user.dir") ).absolutePath
-
 String OpenCL_path  = new File ( project_path + "/dependencies/libopencl-stub/" ).absolutePath
 String OpenNI2_path = new File ( project_path + "/dependencies/OpenNI2" ).absolutePath
 

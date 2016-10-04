@@ -92,39 +92,64 @@ public class MobileStats {
 
         for (SensorFile SENSOR_FILE : SENSOR_FILES) {
             if (new File(SENSOR_FILE.filename).exists()) {
-                availableSensors.add(SENSOR_FILE);
-                MessageLog.addDebug(String.format("File %s exists.", SENSOR_FILE.filename));
                 switch (SENSOR_FILE.type) {
 
                     case SENSOR_VOLTAGE:
-                        voltageFile = SENSOR_FILE.filename;
-                        voltageConv = SENSOR_FILE.coef;
-                        long voltage = readLongFromFile(voltageFile);
-                        voltageConv = Math.pow(10, -(Math.floor(Math.log10(voltage)))); // Voltage should be between 0 and 10
+                        long voltage = readLongFromFile(SENSOR_FILE.filename);
+                        if (voltage != -1L) {
+                            voltageFile = SENSOR_FILE.filename;
+                            voltageConv = SENSOR_FILE.coef;
+                            availableSensors.add(SENSOR_FILE);
+                            MessageLog.addDebug(String.format("File %s exists.", SENSOR_FILE.filename));
+                            voltageConv = Math.pow(10, -(Math.floor(Math.log10(voltage)))); // Voltage should be between 0 and 10
+                        }
                         break;
                     case SENSOR_CURRENT:
-                        currentFile = SENSOR_FILE.filename;
-                        currentConv = SENSOR_FILE.coef;
-                        long current = readLongFromFile(currentFile);
-                        currentConv = Math.pow(10, -(Math.floor(Math.log10(current)))); // Current should be between 0 and 10
+                        long current = readLongFromFile(SENSOR_FILE.filename);
+                        if (current != -1L) {
+                            currentFile = SENSOR_FILE.filename;
+                            currentConv = SENSOR_FILE.coef;
+                            availableSensors.add(SENSOR_FILE);
+                            MessageLog.addDebug(String.format("File %s exists.", SENSOR_FILE.filename));
+                            currentConv = Math.pow(10, -(Math.floor(Math.log10(current)))); // Current should be between 0 and 10
+                        }
                         break;
                     case SENSOR_TEMP:
-                        tempFile = SENSOR_FILE.filename;
-                        tempConv = SENSOR_FILE.coef;
-                        long temp = readLongFromFile(tempFile);
+                        long temp = readLongFromFile(SENSOR_FILE.filename);
+                        if (temp != -1L) {
+                            tempFile = SENSOR_FILE.filename;
+                            tempConv = SENSOR_FILE.coef;
+                            availableSensors.add(SENSOR_FILE);
+                            MessageLog.addDebug(String.format("File %s exists.", SENSOR_FILE.filename));
+                        }
                         tempConv = Math.pow(10, -(Math.floor(Math.log10(temp)) - 1)); // Temperature should be between 10 and 100
                         break;
                     case SENSOR_CHARGE:
-                        chargeFile = SENSOR_FILE.filename;
-                        chargeConv = SENSOR_FILE.coef;
+                        long charge = readLongFromFile(SENSOR_FILE.filename);
+                        if (charge != -1L) {
+                            chargeFile = SENSOR_FILE.filename;
+                            chargeConv = SENSOR_FILE.coef;
+                            availableSensors.add(SENSOR_FILE);
+                            MessageLog.addDebug(String.format("File %s exists.", SENSOR_FILE.filename));
+                        }
                         break;
                     case SENSOR_CAPACITY:
-                        capacityFile = SENSOR_FILE.filename;
-                        capacityConv = SENSOR_FILE.coef;
+                        long capa = readLongFromFile(SENSOR_FILE.filename);
+                        if (capa != -1L) {
+                            capacityFile = SENSOR_FILE.filename;
+                            capacityConv = SENSOR_FILE.coef;
+                            availableSensors.add(SENSOR_FILE);
+                            MessageLog.addDebug(String.format("File %s exists.", SENSOR_FILE.filename));
+                        }
                         break;
                     case SENSOR_FULL_CAPACITY:
-                        fullCapacityFile = SENSOR_FILE.filename;
-                        fullCapacityConv = SENSOR_FILE.coef;
+                        long fcapa = readLongFromFile(SENSOR_FILE.filename);
+                        if (fcapa != -1L) {
+                            fullCapacityFile = SENSOR_FILE.filename;
+                            fullCapacityConv = SENSOR_FILE.coef;
+                            availableSensors.add(SENSOR_FILE);
+                            MessageLog.addDebug(String.format("File %s exists.", SENSOR_FILE.filename));
+                        }
                         break;
                 }
             }

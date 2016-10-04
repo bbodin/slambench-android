@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
 
 import project.pamela.slambench.SLAMBenchApplication;
 
@@ -18,7 +21,6 @@ import project.pamela.slambench.SLAMBenchApplication;
  * Developed in the PAMELA project, EPSRC Programme Grant EP/K008730/1
  * This code is licensed under the MIT License.
  */
-
 class SendDebugTask extends AsyncTask<Void, Void, Boolean> {
 
     private static boolean used;
