@@ -39,6 +39,8 @@ local.properties :
 	@echo "The $@ is not found. Please produce this file. It should look like :"
 	@echo "  sdk.dir=$$HOME/.local/Android/Sdk"
 	@echo "  ndk.dir=$$HOME/.local/Android/Ndk"
+	@echo ""
+	@echo "You can run \"make sdk ndk prop\" to generate sdk ndk and this file."
 	@echo "********************************************************************"
 	@false
 
