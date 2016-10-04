@@ -18,12 +18,13 @@ studio :
 	~/.local/Android/android-studio/bin/studio.sh
 
 sdk :
+	if [ -d ~/.local/Android/Sdk/android-sdk-linux ]; then echo "you do not want to break your previous installation, do you ?" ; exit 1 ; fi
 	wget https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
 	tar xzf android-sdk_r24.4.1-linux.tgz
 	mkdir ~/.local/Android -p
 	mv android-sdk-linux ~/.local/Android/Sdk
 	~/.local/Android/Sdk/tools/android list sdk --all
-	( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | ~/.local/Android/Sdk/tools/android update sdk   -u -a -t "platform-tools,tools,android-22,build-tools-22.0.1,extra-android-m2repository,addon-google_apis-google-22"
+	( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | ~/.local/Android/Sdk/tools/android update sdk   -u -a -t "platform-tools,tools,android-23,build-tools-23.0.2,extra-android-m2repository,addon-google_apis-google-23"
 
 ndk :
 	wget https://dl.google.com/android/repository/android-ndk-r12b-linux-x86_64.zip
