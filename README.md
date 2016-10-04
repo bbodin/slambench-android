@@ -111,5 +111,13 @@ adb install ./app/build/outputs/apk/app-debug.apk
 
 ## Know errors
 
+- The APK compilation failed with an error like :
+```
+> Failed to apply plugin [id 'com.android.application']
+   > Minimum supported Gradle version is ???? If using the gradle wrapper, try editing the distributionUrl in gradle-wrapper.properties to gradle-2.14.1-all.zip
+
+```
+If this error occurs the best is to do as recommanded, just update the gradle-wrapper.properties file.
+
 - Feel free to fill this section.
 - ...
