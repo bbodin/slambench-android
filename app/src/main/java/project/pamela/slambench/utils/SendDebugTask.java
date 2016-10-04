@@ -54,7 +54,44 @@ class SendDebugTask extends AsyncTask<Void, Void, Boolean> {
             skiplines = "";
         }
 
-        return true;
+        String url = "http://homepages.inf.ed.ac.uk/bbodin/debug.php";
+        String charset = "UTF-8";  // Or in Java 7 and later, use the constant: java.nio.charset.StandardCharsets.UTF_8.name()
+        String query;
+
+        try {
+            query = String.format("q=%s", URLEncoder.encode(_line, charset));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+            return true;
+        }
+
+        try {
+            URLConnection urlConnection;
+            urlConnection = new URL(url).openConnection();
+            urlConnection.setDoOutput(true);
+            urlConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=" + charset);
+            urlConnection.setRequestProperty("Accept-Charset", charset);
+            //urlConnection.connect();
+            final OutputStream outputStream;
+
+            outputStream = urlConnection.getOutputStream();
+            outputStream.write(query.getBytes(charset));
+            outputStream.flush();
+            outputStream.close();
+            final InputStream inputStream = urlConnection.getInputStream();
+            int contentLength = urlConnection.getContentLength();
+            inputStream.close();
+            if (contentLength == -1) {
+                return true;
+            } else {
+                Log.i(SLAMBenchApplication.LOG_TAG, "DEBUG content length: " + contentLength + " bytes");
+                return true;
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return true;
+        }
 
     }
 
