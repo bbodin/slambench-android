@@ -82,16 +82,19 @@ I prepared it on a clean Fedora 24 Workstation, and this is what I did first :
   ~/.local/Android/Sdk/tools/android list sdk --all
   ~/.local/Android/Sdk/tools/android update sdk -u -a -t "platform-tools,tools,android-22,build-tools-22.0.1,extra-android-m2repository,addon-google_apis-google-22"   
 ```
-* Install **Android NDK r10e** ([https://developer.android.com/ndk/downloads/index.html](https://developer.android.com/ndk/downloads/index.html))
+* Install **Android NDK r12b** ([https://developer.android.com/ndk/downloads/index.html](https://developer.android.com/ndk/downloads/index.html))
+
 ```
-  wget http://dl.google.com/android/repository/android-ndk-r10e-linux-x86_64.zip
-  unzip android-ndk-r10e-linux-x86_64.zip
-  mv android-ndk-r10e ~/.local/Android/android-ndk-r10e
+  wget http://dl.google.com/android/repository/android-ndk-r12b-linux-x86_64.zip
+  unzip android-ndk-r12b-linux-x86_64.zip
+  mv android-ndk-r10e ~/.local/Android/android-ndk-r12b
 ```
+or just type ```make ndk```.
+
 Then you need to fix the absolute paths in ./local.properties:
 ```
 echo "sdk.dir=/home/`whoami`/.local/Android/Sdk" > ./local.properties
-echo "ndk.dir=/home/`whoami`/.local/Android/android-ndk-r10e" >> ./local.properties
+echo "ndk.dir=/home/`whoami`/.local/Android/android-ndk-r12b" >> ./local.properties
 ```
 
 ## Compilation
