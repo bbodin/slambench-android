@@ -87,7 +87,7 @@ I prepared it on a clean Fedora 24 Workstation, and this is what I did first :
 ```
   wget http://dl.google.com/android/repository/android-ndk-r12b-linux-x86_64.zip
   unzip android-ndk-r12b-linux-x86_64.zip
-  mv android-ndk-r10e ~/.local/Android/android-ndk-r12b
+  mv android-ndk-r12b ~/.local/Android/android-ndk-r12b
 ```
 or just type ```make ndk```.
 
