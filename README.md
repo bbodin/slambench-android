@@ -55,7 +55,7 @@ Just a ```make``` should work, but please **read the preparation before.**
 
 I prepared it on a clean Fedora 24 Workstation, and this is what I did first :
 
-* Install** Java 1.8**, **Python 2.7**, **GCC**
+* Install **Java 1.8**, **Python 2.7**, **GCC**
 ```
   dnf install java-1.8.0-openjdk java-1.8.0-openjdk-devel 
   dnf install python
