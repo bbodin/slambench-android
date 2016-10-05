@@ -50,12 +50,12 @@ In this version of SLAMBench, the KinectFusion application is going to be tested
     <string name="releasenotes_title">Release notes</string>
     <string name="releasenotes_message">
         11 (1.0-10)\n
-        - Add record function.
-	- Upgrade gradle, SDK and NDK.
-	- Add WRITE_EXTERNAL_STORAGE for record feature.
-	- Fix sensor reading bug.
-	- Fix NEON version for NDK r12b.
-	- Update SLAMBench to fix recent phones compatibility.
+        - Add record function.\n
+        - Upgrade gradle, SDK and NDK.\n
+        - Add WRITE_EXTERNAL_STORAGE for record feature.\n
+        - Fix sensor reading bug.\n
+        - Fix NEON version for NDK r12b.\n
+        - Update SLAMBench to fix recent phones compatibility.\n
         10 (1.0-9)\n
         - Fix a dramatic bug in the sensor gathering which used to break to visualization.\n
         9 (1.0-8)\n
