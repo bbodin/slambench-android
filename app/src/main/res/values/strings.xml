@@ -49,6 +49,9 @@ In this version of SLAMBench, the KinectFusion application is going to be tested
     <string name="action_releasenotes">Release Notes</string>
     <string name="releasenotes_title">Release notes</string>
     <string name="releasenotes_message">
+        12 (1.0-11)\n
+        - Update SLAMBench to fix OpenCL crash when a memory error occurs.\n
+        - remove WRITE_EXTERNAL_STORAGE for release version.\n
         11 (1.0-10)\n
         - Add record function.\n
         - Upgrade gradle, SDK and NDK.\n

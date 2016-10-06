@@ -461,6 +461,6 @@ Java_project_pamela_slambench_jni_KFusion_kfusionoclinit (JNIEnv * env,
 
 
 
-  return true;
+  return kfusion->is_ready();
 }
 

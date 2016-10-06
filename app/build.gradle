@@ -30,8 +30,8 @@ android {
         applicationId "project.pamela.slambench"
         minSdkVersion    15
         targetSdkVersion 22
-        versionCode      11
-        versionName      "1.0-10"
+        versionCode      12
+        versionName      "1.0-11"
     }
 
     signingConfigs {

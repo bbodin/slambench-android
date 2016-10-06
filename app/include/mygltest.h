@@ -384,5 +384,6 @@ static int Resize() {
   if (glGetError() != GL_NO_ERROR) {LOGI("OPENGL ERROR");return 0;}
 
         init_done = false;
+        return true;
 }
 
