@@ -35,6 +35,7 @@
 
 
 static const char *default_so_paths[] = {    // Android - 64bit first
+         "/data/egl/libGLES_mali_v2.so", // Hikey Board
         "/vendor/lib64/egl/libGLES_mali.so",
         "/system/lib64/libOpenCL.so",
         // Android
@@ -164,19 +165,41 @@ jstring Java_project_pamela_slambench_jni_Commands_getopenclinfo( JNIEnv* env, j
      for(i=0; i<(sizeof(default_so_paths)/sizeof(char*)); i++)
         {
             if(access_file(default_so_paths[i])) {
+
+
+                 void* handle = dlopen(default_so_paths[i], RTLD_LAZY);
+
+                 if (handle) {
+
+
+                  dlclose(handle);
+
+
                 if (!path) {
                     path = (char *) default_so_paths[i];
                     LOGI("%s is OK and selected.", path);
                 } else {
                     LOGI("%s is OK.",  default_so_paths[i]);
                 }
+             } else {
+
+                    LOGI("%s Cannot be linked.",  default_so_paths[i]);
             }
+            } else {
+
+                    LOGI("%s Cannot be found.",  default_so_paths[i]);
         }
+        }
+        if (!path) {
+          LOGI("OpenCL drivers not found.");
+        }
+
 
     void* handle = dlopen(path, RTLD_LAZY);
 
      if (!handle) {
-        return (env)->NewStringUTF(dlerror());
+        LOGI("Error with OpenCL: %s", dlerror());
+        return (env)->NewStringUTF("");
      } else {
         dlclose(handle);
         return (env)->NewStringUTF(path);
