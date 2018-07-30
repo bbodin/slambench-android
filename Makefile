@@ -49,7 +49,7 @@ local.properties :
 ${ROOT_DIR}/app/include/CL:
 	mkdir -p dependencies
 	git clone https://github.com/KhronosGroup/OpenCL-Headers/ dependencies/OpenCL-Headers/
-	mkdir ${ROOT_DIR}/app/include/CL/ && cd dependencies/OpenCL-Headers/ && cp *.h ${ROOT_DIR}/app/include/CL/
+	mkdir ${ROOT_DIR}/app/include/CL/ && cd dependencies/OpenCL-Headers/ && cp -rf CL ${ROOT_DIR}/app/include/
 	rm dependencies/OpenCL-Headers/ -rf
 
 ${ROOT_DIR}/app/include/TooN: 
